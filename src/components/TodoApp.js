@@ -2,6 +2,8 @@ import React from "react";
 
 // Styles
 import styles from "./TodoApp.module.css";
+
+// Components
 import Form from "./Form";
 
 const TodoApp = () => {
@@ -11,7 +13,6 @@ const TodoApp = () => {
         <h1 className={styles.todoTitle}>To Do List</h1>
         <Form />
       </header>
-      
     </div>
   );
 };

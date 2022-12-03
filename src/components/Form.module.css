@@ -15,7 +15,7 @@
   font-size: 15px;
 }
 
-.todoFormSubmit {
+.todoFormButton {
   width: 20%;
   border: none;
   outline: none;
@@ -26,6 +26,6 @@
   transition: all 0.2s linear;
 }
 
-.todoFormSubmit:hover {
+.todoFormButton:hover {
   background: #2563eb;
 }
