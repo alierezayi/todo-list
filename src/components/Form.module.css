@@ -1,0 +1,31 @@
+.todoForm {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px 0;
+  height: 35px;
+}
+
+.todoFormInput {
+  width: 60%;
+  border: none;
+  outline: none;
+  border-radius: 5px 0px 0px 5px;
+  padding: 0 5px;
+  font-size: 15px;
+}
+
+.todoFormSubmit {
+  width: 20%;
+  border: none;
+  outline: none;
+  border-radius: 0px 5px 5px 0px;
+  background: #3b82f6;
+  color: #ffffff;
+  font-size: 15px;
+  transition: all 0.2s linear;
+}
+
+.todoFormSubmit:hover {
+  background: #2563eb;
+}
