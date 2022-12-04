@@ -8,7 +8,8 @@
 }
 
 .todoHeader {
-  background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+  background-image: linear-gradient(to bottom, #accbee 0%, #e7f0fd 100%);
+  border-radius: 7px 7px 0 0;
 }
 
 .todoTitle {

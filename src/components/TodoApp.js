@@ -5,6 +5,7 @@ import styles from "./TodoApp.module.css";
 
 // Components
 import Form from "./Form";
+import List from "./List"
 
 const TodoApp = () => {
   return (
@@ -13,6 +14,7 @@ const TodoApp = () => {
         <h1 className={styles.todoTitle}>To Do List</h1>
         <Form />
       </header>
+      <List />
     </div>
   );
 };

@@ -1,26 +1,41 @@
 import { createContext, useReducer } from "react";
 
 const initialState = {
-  newTask: "",
   todoList: [],
 };
 
 const reducer = (state, action) => {
   switch (action.type) {
-    case "INPUT_VALUE":
+    case "ADD_TASK":
+      const newTask = {
+        id: action.payload.id,
+        text: action.payload.text,
+        completed: false,
+      };
       return {
         ...state,
-        newTask: action.payload.target.value,
+        todoList: [...state.todoList, newTask],
       };
 
-    case "ADD_TASK":
+    case "DELETE_TASK":
+      const newtodoList = state.todoList.filter(
+        (task) => task.id !== action.payload.id
+      );
       return {
         ...state,
-        todoList: [
-          ...state.todoList,
-          { id: Date.now(), text: state.newTask, completed: false },
-        ],
-        newTask: "",
+        todoList: [...newtodoList],
+      };
+
+    case "COMPLETE_TASK":
+      const updateTodoList = state.todoList.map((todo) =>
+        todo.id === action.payload
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      );
+
+      return {
+        ...state,
+        todoList: [...updateTodoList],
       };
 
     default:

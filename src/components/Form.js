@@ -1,4 +1,5 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
+import uuid from "react-uuid";
 
 // Context
 import { TodoContext } from "../context/TodoContextProvider";
@@ -9,22 +10,24 @@ import styles from "./Form.module.css";
 const Form = () => {
   const { state, dispatch } = useContext(TodoContext);
 
-  console.log(state.newTask);
   console.log(state.todoList);
+  const [text, setText] = useState("");
+
+  const addTask = () => {
+    dispatch({ type: "ADD_TASK", payload: { text, id: uuid() } });
+    setText("");
+  };
 
   return (
     <div className={styles.todoForm}>
       <input
         type="text"
-        value={state.newTask}
-        onChange={(event) => dispatch({ type: "INPUT_VALUE", payload: event })}
+        value={text}
+        onChange={(event) => setText(event.target.value)}
         className={styles.todoFormInput}
         placeholder="Title ..."
       />
-      <button
-        onClick={() => dispatch({ type: "ADD_TASK" })}
-        className={styles.todoFormButton}
-      >
+      <button onClick={addTask} className={styles.todoFormButton}>
         Submit
       </button>
     </div>
