@@ -12,9 +12,13 @@ const List = () => {
 
   return (
     <ul className={styles.listContainer}>
-      {state.todoList.map((task) => (
-        <Task key={task.id} task={task} />
-      ))}
+      {state.todoList.length ? (
+        state.todoList.map((task) => <Task key={task.id} task={task} />)
+      ) : (
+        <div className={styles.noData}>
+          <span>There is no data for show!</span>
+        </div>
+      )}
     </ul>
   );
 };

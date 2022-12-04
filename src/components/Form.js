@@ -14,7 +14,9 @@ const Form = () => {
   const [text, setText] = useState("");
 
   const addTask = () => {
-    dispatch({ type: "ADD_TASK", payload: { text, id: uuid() } });
+    !text
+      ? alert("Please enter your task.")
+      : dispatch({ type: "ADD_TASK", payload: { text, id: uuid() } });
     setText("");
   };
 

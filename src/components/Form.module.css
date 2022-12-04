@@ -12,20 +12,28 @@
   outline: none;
   border-radius: 5px 0px 0px 5px;
   padding: 0 5px;
-  font-size: 15px;
+  font-size: medium;
 }
 
 .todoFormButton {
   width: 20%;
   border: none;
   outline: none;
+  cursor: pointer;
   border-radius: 0px 5px 5px 0px;
   background: #3b82f6;
   color: #ffffff;
-  font-size: 15px;
+  font-size: medium;
   transition: all 0.2s linear;
 }
 
 .todoFormButton:hover {
   background: #2563eb;
+}
+
+@media (max-width: 425px) {
+  .todoFormInput, 
+  .todoFormButton {
+    font-size: small;
+  }
 }

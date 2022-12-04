@@ -1,8 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f8fafc;
+  min-height: 100vh;
+}
+
 .todoContainer {
   display: flex;
   flex-direction: column;
   width: 45%;
-  margin: 50px auto;
+  margin: 30px auto;
   border-radius: 7px;
   box-shadow: 6px 6px 20px #b3b4b5, -6px -6px 20px #ffffff;
 }
@@ -10,6 +21,21 @@
 .todoHeader {
   background-image: linear-gradient(to bottom, #accbee 0%, #e7f0fd 100%);
   border-radius: 7px 7px 0 0;
+  border-bottom: 1px solid #cbd5e1;
+}
+
+.label {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 40px;
+  border-bottom: 1px solid #94a3b8;
+}
+
+.label span {
+  font-style: italic;
+  margin-left: 10px;
+  color: #64748b;
 }
 
 .todoTitle {
@@ -17,6 +43,8 @@
   text-align: center;
   margin: 50px 0 0 0;
 }
+
+
 
 @media (max-width: 1024px) {
   .todoContainer {
@@ -28,3 +56,5 @@
     width: 75%;
   }
 }
+
+

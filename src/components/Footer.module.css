@@ -1,0 +1,26 @@
+.footerContainer {
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-image: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%);
+  border-radius: 0 0 7px 7px;
+
+}
+
+.clearCompleted {
+  width: 7rem;
+  padding: 2px;
+  border-radius: 5px;
+  border: none;
+  font-size: small;
+  cursor: pointer;
+  transition: all 0.4s linear;
+  color: #3b82f6;
+  border: 1px solid #3b82f6;
+}
+
+.clearCompleted:hover {
+  background: #dbeafe;
+}

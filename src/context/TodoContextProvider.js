@@ -2,6 +2,7 @@ import { createContext, useReducer } from "react";
 
 const initialState = {
   todoList: [],
+  filteredTodoList: [],
 };
 
 const reducer = (state, action) => {
@@ -32,10 +33,17 @@ const reducer = (state, action) => {
           ? { ...todo, completed: !todo.completed }
           : todo
       );
-
       return {
         ...state,
         todoList: [...updateTodoList],
+      };
+
+    case "SHOW_COMPLETED":
+      const completedItem = state.todoList.filter(
+        (item) => item.completed === true
+      );
+      return {
+        filteredTodoList: [...completedItem],
       };
 
     default:
