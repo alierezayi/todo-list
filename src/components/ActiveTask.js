@@ -4,12 +4,12 @@ import React, { useContext } from "react";
 import Xicon from "../assets/x-mark.svg";
 
 // Styles
-import styles from "./Task.module.css";
+import styles from "./ActiveTask.module.css";
 
 // Context
 import { TodoContext } from "../context/TodoContextProvider";
 
-const Task = ({ task }) => {
+const ActiveTask = ({ task }) => {
   const { id, text, completed } = task;
 
   const { dispatch } = useContext(TodoContext);
@@ -39,4 +39,4 @@ const Task = ({ task }) => {
   );
 };
 
-export default Task;
+export default ActiveTask;

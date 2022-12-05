@@ -1,23 +1,25 @@
 import React, { useContext } from "react";
 
 // Styles
-import styles from "./List.module.css";
+import styles from "./ActiveList.module.css";
 
 // Context
 import { TodoContext } from "../context/TodoContextProvider";
 
 // Components
-import Task from "./Task";
+import ActiveTask from "./ActiveTask";
 
-const List = () => {
+const ActiveList = () => {
   const { state } = useContext(TodoContext);
 
-  // const filteredTodoList = state.todoList
+  const filteredTodoList = state.todoList.filter(
+    (item) => item.completed === false
+  );
 
   return (
     <ul className={styles.listContainer}>
-      {state.todoList.length ? (
-        state.todoList.map((task) => <Task key={task.id} task={task} />)
+      {filteredTodoList.length ? (
+        filteredTodoList.map((task) => <ActiveTask key={task.id} task={task} />)
       ) : (
         <div className={styles.noData}>
           <span>There is no data for show!</span>
@@ -27,4 +29,4 @@ const List = () => {
   );
 };
 
-export default List;
+export default ActiveList;

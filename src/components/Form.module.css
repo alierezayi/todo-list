@@ -24,7 +24,7 @@
   background: #3b82f6;
   color: #ffffff;
   font-size: medium;
-  transition: all 0.2s linear;
+  transition: all 0.3s linear;
 }
 
 .todoFormButton:hover {

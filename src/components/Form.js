@@ -10,7 +10,6 @@ import styles from "./Form.module.css";
 const Form = () => {
   const { state, dispatch } = useContext(TodoContext);
 
-  console.log(state.todoList);
   const [text, setText] = useState("");
 
   const addTask = () => {

@@ -1,26 +1,67 @@
 .footerContainer {
-  height: 40px;
+  height: 30px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
   padding: 0 10px;
-  background-image: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%);
+  /* background-image: linear-gradient(to bottom, #f5f7fa 0%, #c3cfe2 100%); */
   border-radius: 0 0 7px 7px;
+  border-top: 1px solid #cbd5e1;
+}
 
+.todoLeft span:first-child {
+  margin-right: 4px;
+  font-weight: bold;
+}
+
+.todoLeft span {
+}
+
+.linkGroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activeLink {
+  padding: 0 7px;
+  text-decoration: none;
+  color: #3b82f6;
+  font-weight: bold;
+}
+
+.inActiveLink {
+  padding: 0 7px;
+  text-decoration: none;
+  color: #94a3b8;
+  font-weight: bold;
 }
 
 .clearCompleted {
   width: 7rem;
   padding: 2px;
-  border-radius: 5px;
+  border-radius: 3px;
   border: none;
-  font-size: small;
   cursor: pointer;
-  transition: all 0.4s linear;
-  color: #3b82f6;
-  border: 1px solid #3b82f6;
+  color: #475569;
+  background: transparent;
+  text-decoration: underline;
+  transition: all 0.1s linear;
 }
 
 .clearCompleted:hover {
-  background: #dbeafe;
+  color: #64748b;
+}
+
+@media (max-width: 425px) {
+  .todoLeft span,
+  .clearCompleted {
+    font-size: small;
+  }
+
+  .inActiveLink,
+  .activeLink {
+    padding: 4px;
+  }
 }

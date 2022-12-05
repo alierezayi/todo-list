@@ -2,7 +2,6 @@ import { createContext, useReducer } from "react";
 
 const initialState = {
   todoList: [],
-  filteredTodoList: [],
 };
 
 const reducer = (state, action) => {
@@ -29,7 +28,7 @@ const reducer = (state, action) => {
 
     case "COMPLETE_TASK":
       const updateTodoList = state.todoList.map((todo) =>
-        todo.id === action.payload
+        todo.id === action.payload.id
           ? { ...todo, completed: !todo.completed }
           : todo
       );
@@ -38,12 +37,13 @@ const reducer = (state, action) => {
         todoList: [...updateTodoList],
       };
 
-    case "SHOW_COMPLETED":
-      const completedItem = state.todoList.filter(
-        (item) => item.completed === true
+    case "CLEAR_COMPLETED":
+      const clearCompletedItems = state.todoList.filter(
+        (item) => item.completed === false
       );
       return {
-        filteredTodoList: [...completedItem],
+        ...state,
+        todoList: [...clearCompletedItems],
       };
 
     default:
