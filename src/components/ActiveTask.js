@@ -20,12 +20,10 @@ const ActiveTask = ({ task }) => {
         <input
           className={styles.taskCheckbox}
           type="checkbox"
-          value={completed}
-          onChange={() => dispatch({ type: "COMPLETE_TASK", payload: { id } })}
+          checked={completed}
+          onChange={() => dispatch({ type: "COMPLETE_TASK", payload: id })}
         />
-        <span
-          className={completed ? styles.taskTextCompleted : styles.taskText}
-        >
+        <span className={completed ? styles.taskTextCompleted : styles.taskText}>
           {text}
         </span>
       </div>

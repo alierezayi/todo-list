@@ -8,7 +8,7 @@ import { TodoContext } from "../context/TodoContextProvider";
 import styles from "./Form.module.css";
 
 const Form = () => {
-  const { state, dispatch } = useContext(TodoContext);
+  const { dispatch } = useContext(TodoContext);
 
   const [text, setText] = useState("");
 

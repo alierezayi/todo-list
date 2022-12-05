@@ -12,8 +12,6 @@ import Task from "./Task";
 const List = () => {
   const { state } = useContext(TodoContext);
 
-  // const filteredTodoList = state.todoList
-
   return (
     <ul className={styles.listContainer}>
       {state.todoList.length ? (

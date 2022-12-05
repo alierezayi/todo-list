@@ -1,4 +1,5 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 
 // Styles
 import styles from "./TodoApp.module.css";
@@ -6,7 +7,6 @@ import styles from "./TodoApp.module.css";
 // Components
 import Form from "./Form";
 import Footer from "./Footer";
-import { Outlet } from "react-router-dom";
 
 const TodoApp = () => {
   return (

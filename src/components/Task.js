@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 
 // Icon
 import Xicon from "../assets/x-mark.svg";
@@ -20,8 +20,8 @@ const Task = ({ task }) => {
         <input
           className={styles.taskCheckbox}
           type="checkbox"
-          value={completed}
-          onChange={() => dispatch({ type: "COMPLETE_TASK", payload: { id } })}
+          checked={completed}
+          onChange={() => dispatch({ type: "COMPLETE_TASK", payload: id })}
         />
         <span
           className={completed ? styles.taskTextCompleted : styles.taskText}

@@ -24,12 +24,11 @@ const Footer = () => {
         <NavLink to="all-tasks" className={({ isActive }) => isActive ? styles.activeLink : styles.inActiveLink}>
           All
         </NavLink>
-        <NavLink to="active-tasks" className={({ isActive }) => isActive ? styles.activeLink : styles.inActiveLink}
-        >
+        <NavLink to="active-tasks" className={({ isActive }) => isActive ? styles.activeLink : styles.inActiveLink}>
           Active
         </NavLink>
       </div>
-      <button className={styles.clearCompleted} onClick={() => dispatch({ type: "CLEAR_COMPLETED" })}>clear completed</button>
+      <button className={styles.clearCompleted} onClick={() => dispatch({ type: "DELETE_COMPLETED" })}>clear completed</button>
     </div>
   );
 };

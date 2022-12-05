@@ -27,17 +27,17 @@ const reducer = (state, action) => {
       };
 
     case "COMPLETE_TASK":
-      const updateTodoList = state.todoList.map((todo) =>
-        todo.id === action.payload.id
+      const updateALLTasks = state.todoList.map((todo) =>
+        todo.id === action.payload
           ? { ...todo, completed: !todo.completed }
           : todo
       );
       return {
         ...state,
-        todoList: [...updateTodoList],
+        todoList: [...updateALLTasks],
       };
 
-    case "CLEAR_COMPLETED":
+    case "DELETE_COMPLETED":
       const clearCompletedItems = state.todoList.filter(
         (item) => item.completed === false
       );
